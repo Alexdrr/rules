@@ -55,7 +55,7 @@ spec:
         summary: "SSL certificate has expired (instance {{ $labels.instance }})"
         description: "SSL certificate has expired already\n  VALUE = {{ $value }}\n  LABELS: {{ $labels }}"
     - alert: HttpSlowRequests
-      expr: avg_over_time(probe_http_duration_seconds[1m]) > 1.5
+      expr: avg_over_time(probe_http_duration_seconds[1m]) > 6
       for: 5m
       labels:
         severity: warning
